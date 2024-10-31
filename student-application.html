@@ -79,26 +79,22 @@
   <!--==========================
     Research Project Proposal SubmissionForm Section
   ============================-->
-  <section id="research-project-submission" class="after-header clearfix">
+  <section id="student-application-submission" class="after-header clearfix">
     <div class="container my-5">
         <div class="row justify-content-md-center">
-            <h1 class="text-center mb-1 col-md-12">Research Project Proposal Submission Form</h1>
+            <h1 class="text-center mb-1 col-md-12">Application Form for Students</h1>
             <p class="text-center col-md-8">
-                Submit your research project proposals to contribute to SnT4Dev. We welcomes proposals focused on impactful, collaborative research that advances sustainable development goals.
+                Please complete the form below to apply.
             </p>
         </div>
         
-        
         <form class="form submission-form-space">
-
             <aside id="personalInformation" class="row">
                 <div class="col-md-12">
-                    <!-- Personal -->
-                    <h5 class="input-group-title">Personal information</h5>
+                    <h5 class="input-group-title">Personal Information</h5>
                 </div>
                 
                 <div class="col-md-6">
-                    <!-- First Name -->
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
                         <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
@@ -106,250 +102,134 @@
                 </div>
     
                 <div class="col-md-6">
-                    <!-- Last Name -->
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Last Name</label>
                         <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
                     </div>
                 </div>
-    
+
                 <div class="col-md-6">
-                    <!-- Gender -->
                     <div class="mb-3">
-                        <label for="gender" class="form-label">Gender</label>
-                        <select class="form-control" id="gender">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="nationality" class="form-label">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" placeholder="Enter your nationality">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="englishLevel" class="form-label">English Level</label>
+                        <select class="form-control" id="englishLevel">
+                            <option selected disabled>Choose your level...</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="native">Native Speaker</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="accommodation" class="form-label">Do you need accommodation assistance?</label>
+                        <select class="form-control" id="accommodation">
                             <option selected disabled>Choose...</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="non-binary">Non-Binary</option>
-                            <option value="prefer-not-to-say">Prefer Not to Say</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
                         </select>
                     </div>
                 </div>
-    
-                <div class="col-md-6">
-                    <!-- Academic Title -->
+            </aside>
+
+            <aside id="researchInformation" class="row">
+                <div class="col-md-12">
+                    <h5 class="input-group-title">Research Information</h5>
+                </div>
+
+                <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <select class="form-control" id="title">
-                            <option selected disabled>Select your title...</option>
-                            <option value="professor">Professor</option>
-                            <option value="dr">Dr.</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
+                        <label for="motivation" class="form-label">Motivation for Studying in Luxembourg</label>
+                        <textarea class="form-control" id="motivation" rows="4" placeholder="Describe your motivation"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="fieldInterest" class="form-label">Field of Interest and Scientific Motivation</label>
+                        <textarea class="form-control" id="fieldInterest" rows="4" placeholder="Describe your scientific domain"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="researchGroup" class="form-label">Research Group Selection</label>
+                        <select class="form-control" id="researchGroup" multiple>
+                            <option disabled>Select up to 3 research groups...</option>
+                            <option value="apsia">Applied Security and Information Assurance (APSIA)</option>
+                            <option value="arg">Automation and Robotics (ARG)</option>
+                            <option value="critix">Critical and Extreme Security and Dependability (CritiX)</option>
+                            <option value="cryptolux">CryptoLUX</option>
+                            <option value="cvi2">Computer Vision, Imaging and Machine Intelligence (CVI2)</option>
+                            <option value="finatrax">Digital Financial Services and Cross Organisational Digital Transformations (FINATRAX)</option>
+                            <option value="irisc">Socio-technical Cybersecurity (IRiSC)</option>
+                            <option value="pcog">Parallel Computing and Optimisation (PCOG)</option>
+                            <option value="svv">Software Verification and Validation (SVV)</option>
+                            <option value="trux">Trustworthy Software (TruX)</option>
+                            <option value="ubix">Ubiquitous and Intelligent Systems (UBIX)</option>
+                            <option value="spasys">Space Systems Engineering (SpaSys)</option>
+                            <option value="sparc">Signal Processing Applications in Radar and Communications (SPARC)</option>
+                            <option value="sigcom">Signal Processing and Communications (SIGCOM)</option>
+                            <option value="serval">Security Design and Validation (SerVal)</option>
+                            <option value="sedan">Services and Data Management (SEDAN)</option>
+                            <option value="spacer">Space Robotics (SpaceR)</option>
+                            <option value="eint">Entrepreneurship, Innovation, and New Technology (EINT)</option>
                         </select>
-                    </div>
-                </div>
-    
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="submitterEmail" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="submitterEmail" placeholder="Enter your email address" required>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="submitterPhone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="submitterPhone" placeholder="Enter your phone number">
-                    </div>
-                </div>
-            </aside>
-            
-            <aside id="organizationInformation" class="row">
-                <div class="col-md-12">
-                    <!-- Organization / Research Unit -->
-                    <h5 class="input-group-title">Organization / Research Unit</h5>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="organizationName" class="form-label">Organization Name</label>
-                        <input type="text" class="form-control" id="organizationName" placeholder="Enter organization name" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="researchUnitName" class="form-label">Research Unit Name</label>
-                        <input type="text" class="form-control" id="researchUnitName" placeholder="Enter your research unit name">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="streetAndNumber" class="form-label">Street and Number</label>
-                        <input type="text" class="form-control" id="streetAndNumber" placeholder="Enter street name and number" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="Enter city" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="zipCode" class="form-label">Zip Code</label>
-                        <input type="text" class="form-control" id="zipCode" placeholder="Enter zip code" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="country" class="form-label">Country</label>
-                        <select class="form-control" id="country" required>
-                            <option selected disabled>Choose country</option>
-                            <option value="LU">Luxembourg</option>
-                            <option value="BJ">Benin</option>
-                            <option value="SN">Sénégal</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="organizationWebsite" class="form-label">Organization Website</label>
-                        <input type="url" class="form-control" id="organizationWebsite" placeholder="Enter organization website URL">
-                    </div>
-                </div>
-            </aside>
-            
-            <aside id="researchProjectDescription" class="row">
-                <div class="col-md-12">
-                    <!-- Research Project -->
-                    <h5 class="input-group-title">Research Project Description</h5>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="mb-3">
-                        <label for="projectTitle" class="form-label">Project Title</label>
-                        <input type="text" class="form-control" id="projectTitle" placeholder="Enter project title">
+                        <small class="form-text text-muted">Hold Ctrl (or Cmd) to select multiple groups.</small>
                     </div>
                 </div>
 
                 <div class="col-md-12">
-                    <!-- Background and Motivation -->
                     <div class="mb-3">
-                        <label for="backgroundMotivation" class="form-label">Background and Motivation</label>
-                        <textarea class="form-control" id="backgroundMotivation" rows="4" placeholder="Describe background and motivation"></textarea>
+                        <label for="researchProposal" class="form-label">Brief Research Proposal</label>
+                        <textarea class="form-control" id="researchProposal" rows="4" placeholder="Provide a brief research proposal sketch"></textarea>
                     </div>
-                </div>
-            </aside>
-            
-            <aside id="researchProjectObjectives" class="row">
-                <div class="col-md-12">
-                    <!-- Research Project Objectives -->
-                    <h5 class="input-group-title">Research Project Objectives</h5>
                 </div>
 
-                <div id="objectivesSection" class="col-md-12">
-                    <!-- Research Objectives -->
-                    <label for="objective" class="form-label">Objectives</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Objective">
-                        <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-secondary mb-3" onclick="addObjective()">Add Objective</button>
-                </div>
-            </aside>
-
-            <aside id="researchProjectResearchQuestions" class="row">
-                <div class="col-md-12">
-                    <!-- Research Questions -->
-                    <h5 class="input-group-title">Research Questions</h5>
-                </div>
-
-                <div id="questionsSection" class="col-md-12">
-                    <!-- Research Questions -->
-                    <label for="question" class="form-label">Questions</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Research Question">
-                        <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-secondary mb-3" onclick="addQuestion()">Add Research Question</button>
-                </div>
-            </aside>
-            
-            <aside id="researchProjectMethodology" class="row">
-                <div class="col-md-12">
-                    <!-- Research Project Methodology -->
-                    <h5 class="input-group-title">Research Project Methodology</h5>
-                </div>
-    
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="technicalInvestigation" class="form-label">Technical Investigation</label>
-                        <textarea class="form-control" id="technicalInvestigation" rows="3" placeholder="Describe technical investigation methodology"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="methodologyPhase2" class="form-label">Phase 2: Economic Viability Study</label>
-                        <textarea class="form-control" id="methodologyPhase2" rows="3" placeholder="Describe economic viability study methodology"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="ethicalConsiderations" class="form-label">Ethical Considerations</label>
-                        <textarea class="form-control" id="ethicalConsiderations" rows="3" placeholder="Describe ethical considerations for the project"></textarea>
-                    </div>
-                </div>
-            </aside>
-            
-            <aside id="researchProjectImpact" class="row">
-                <div class="col-md-12">
-                    <!-- Research Project Impact -->
-                    <h5 class="input-group-title">Research Project Impact</h5>
-                </div>
-    
-                <div class="col-md-12">
-                    <!-- Expected Contributions -->
-                    <div class="mb-3">
-                        <label for="expectedContributions" class="form-label">Expected Contributions</label>
-                        <textarea class="form-control" id="expectedContributions" rows="4" placeholder="List expected contributions"></textarea>
-                    </div>
-                </div>
-            </aside>
-            
-            <aside id="researchProjectReferences" class="row">
-                <div class="col-md-12">
-                    <!-- References -->
-                    <h5 class="input-group-title">References</h5>
-                </div>
-    
-                <div class="col-md-12">
-                    <div class="mb-3">
-                        <textarea class="form-control" id="references" rows="3" placeholder="List references"></textarea>
+                        <label for="hostGroupJustification" class="form-label">SnT Host Research Group Justification</label>
+                        <textarea class="form-control" id="hostGroupJustification" rows="4" placeholder="Specify your motivation and the reason for selecting this/these research group(s)"></textarea>
                     </div>
                 </div>
             </aside>
 
-            <aside id="agreement" class="row"></aside>
+            <aside id="agreement" class="row">
                 <div class="col-md-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="agreementCheck" required>
                         <label class="form-check-label" for="agreementCheck">
-                            I agree to the <a href="#">terms and conditions</a>.
+                          I agree to the <a href="#">terms and conditions</a>.
                         </label>
                     </div>
                 </div>
             </aside>
-            
+
             <aside id="submition" class="row">
                 <div class="col-md-12">
-                    <!-- Submit Button -->
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit Proposal</button>
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
                     </div>
                 </div>
             </aside>
         </form>
     </div>
-  </section>
+</section>
 
   <!--==========================
     Footer
