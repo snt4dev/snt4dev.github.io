@@ -222,10 +222,13 @@ h6 {
 # Intro Section
 --------------------------------------------------------------*/
 
-#intro {
-  width: 100%;
+.after-header {
   position: relative;
   top: 110px;
+}
+
+#intro {
+  width: 100%;
   padding: 70px 20px;
   background: #f5f8fd;
   
@@ -1522,6 +1525,34 @@ h6 {
 #footer .credits a:hover {
   color: #0088C0;
 }
+
+.input-group-title {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.submission-form-space {
+  padding-bottom: 100px;
+}
+
+.submission-form-space aside {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.submission-form-space aside:nth-child(even) {
+  background-color: #fafafa;
+  border: 1px rgb(87, 87, 87) dotted;
+  box-shadow: 0px 0px 1px gray;
+}
+
+.submission-form-space aside:nth-child(odd) {
+  background-color: #fafafa;
+  border: 1px rgb(87, 87, 87) dotted;
+  box-shadow: 0px 0px 1px gray;
+}
+
 
 /*--------------------------------------------------------------
 # Responsive Media Queries
