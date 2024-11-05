@@ -82,7 +82,7 @@
   <section id="student-application-submission" class="after-header clearfix">
     <div class="container my-5">
         <div class="row justify-content-md-center">
-            <h1 class="text-center mb-1 col-md-12">Application Form for Students</h1>
+            <h1 class="text-center mb-1 col-md-12">Application Form for Doctoral Candidate<br>and Post-Doctoral</h1>
             <p class="text-center col-md-8">
                 Please complete the form below to apply.
             </p>
@@ -135,6 +135,13 @@
                     </div>
                 </div>
 
+                <div id="cvUpload" class="col-md-6">
+                  <label for="cvUpload" class="form-label">Upload Your CV</label>
+                  <div class="input-group mb-3">
+                      <input type="file" name="cvUpload" class="form-control" required accept=".pdf">
+                  </div>
+                </div>
+
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="accommodation" class="form-label">Do you need accommodation assistance?</label>
@@ -152,9 +159,20 @@
                     <h5 class="input-group-title">Research Information</h5>
                 </div>
 
+                <div class="col-md-6">
+                  <div class="mb-3">
+                      <label for="applicationType">Select your application type:</label>
+                      <select name="applicationType" id="applicationType" required class="form-control">
+                          <option value="">Please choose an option</option>
+                          <option value="doctoral">Doctoral Candidate</option>
+                          <option value="postdoctoral">Postdoctoral Researcher</option>
+                      </select>
+                  </div>
+                </div>              
+
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <label for="motivation" class="form-label">Motivation for Studying in Luxembourg</label>
+                        <label for="motivation" class="form-label">Motivation for Studying/Conducting Research in Luxembourg</label>
                         <textarea class="form-control" id="motivation" rows="4" placeholder="Describe your motivation"></textarea>
                     </div>
                 </div>
@@ -384,34 +402,24 @@
   <script src="js/additional.js"></script>
 
     <script>
-        // Function to add a new objective input
-        function addObjective() {
-            const objectivesSection = document.getElementById("objectivesSection");
-            const newInputGroup = document.createElement("div");
-            newInputGroup.className = "input-group mb-3";
-            newInputGroup.innerHTML = `
-                <input type="text" class="form-control" placeholder="Objective">
-                <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-            `;
-            objectivesSection.appendChild(newInputGroup);
-        }
+        $(document).ready(function() {
+          // Required inputs
+          $('.submission-form-space input, .submission-form-space select, .submission-form-space textarea').each(function(index) {
+              if ($(this).attr('required')) {
+                  try {
+                      let label = $(this).parent().find('label');
+                      if (label != undefined) {
+                          label.html(label.text() + '<strong class="text-danger"> *</strong>');
+                      }
+                  } catch (error) {
+                      
+                  }
+                  
+              } else {
 
-        // Function to add a new research question input
-        function addQuestion() {
-            const questionsSection = document.getElementById("questionsSection");
-            const newInputGroup = document.createElement("div");
-            newInputGroup.className = "input-group mb-3";
-            newInputGroup.innerHTML = `
-                <input type="text" class="form-control" placeholder="Research Question">
-                <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-            `;
-            questionsSection.appendChild(newInputGroup);
-        }
-
-        // Function to remove an input group
-        function removeInput(button) {
-            button.parentElement.remove();
-        }
+              }
+          });
+        });
     </script>
 </body>
 </html>

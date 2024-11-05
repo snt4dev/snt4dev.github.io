@@ -95,13 +95,14 @@
                 <div class="col-md-12">
                     <!-- Personal -->
                     <h5 class="input-group-title">Personal information</h5>
+                    <p class="alert alert-info">Please provide your personal information, including your full name, contact details, and a brief bio.</p>
                 </div>
                 
                 <div class="col-md-6">
                     <!-- First Name -->
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                        <input type="text" class="form-control" id="firstName" name="firstName" required placeholder="Enter your first name">
                     </div>
                 </div>
     
@@ -109,7 +110,7 @@
                     <!-- Last Name -->
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                        <input type="text" class="form-control" id="lastName" name="lastName" required placeholder="Enter your last name">
                     </div>
                 </div>
     
@@ -117,7 +118,7 @@
                     <!-- Gender -->
                     <div class="mb-3">
                         <label for="gender" class="form-label">Gender</label>
-                        <select class="form-control" id="gender">
+                        <select class="form-control" id="gender" name="gender" required>
                             <option selected disabled>Choose...</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -131,7 +132,7 @@
                     <!-- Academic Title -->
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <select class="form-control" id="title">
+                        <select class="form-control" id="title" name="title" required>
                             <option selected disabled>Select your title...</option>
                             <option value="professor">Professor</option>
                             <option value="dr">Dr.</option>
@@ -145,14 +146,28 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="submitterEmail" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="submitterEmail" placeholder="Enter your email address" required>
+                        <input type="email" class="form-control" id="submitterEmail" name="submitterEmail" placeholder="Enter your email address" required>
                     </div>
                 </div>
                 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="submitterPhone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="submitterPhone" placeholder="Enter your phone number">
+                        <input type="tel" class="form-control" id="submitterPhone" name="submitterPhone" placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <div id="cvUpload" class="col-md-6">
+                    <label for="cvUpload" class="form-label">Upload Your CV</label>
+                    <div class="input-group mb-3">
+                        <input type="file" name="cvUpload" class="form-control" required accept=".pdf">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="biography" class="form-label">Biography</label>
+                        <textarea class="form-control" name="biography" id="biography" rows="4" placeholder="A brief bio here"></textarea>
                     </div>
                 </div>
             </aside>
@@ -165,43 +180,57 @@
 
                 <div class="col-md-6">
                     <div class="mb-3">
+                        <label for="organizationType" class="form-label">Organization Type</label>
+                        <select class="form-control" id="organizationType" name="organizationType" required>
+                            <option selected disabled>Choose your best fit</option>
+                            <option value="Educational and Research Institutions">Educational and Research Institutions</option>
+                            <option value="Governmental">Governmental</option>
+                            <option value="Private Sector">Private Sector</option>
+                            <option value="StartUP">StartUP</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
                         <label for="organizationName" class="form-label">Organization Name</label>
-                        <input type="text" class="form-control" id="organizationName" placeholder="Enter organization name" required>
+                        <input type="text" class="form-control" id="organizationName" name="organizationName" placeholder="Enter organization name" required>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="researchUnitName" class="form-label">Research Unit Name</label>
-                        <input type="text" class="form-control" id="researchUnitName" placeholder="Enter your research unit name">
+                        <input type="text" class="form-control" id="researchUnitName" name="researchUnitName" placeholder="Enter your research unit name">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="streetAndNumber" class="form-label">Street and Number</label>
-                        <input type="text" class="form-control" id="streetAndNumber" placeholder="Enter street name and number" required>
+                        <input type="text" class="form-control" id="streetAndNumber" name="streetAndNumber" placeholder="Enter street name and number">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" placeholder="Enter city" required>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="zipCode" class="form-label">Zip Code</label>
-                        <input type="text" class="form-control" id="zipCode" placeholder="Enter zip code" required>
+                        <input type="text" class="form-control" id="zipCode" name="zipCode" placeholder="Enter zip code">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <select class="form-control" id="country" required>
+                        <select class="form-control" id="country" name="country" required>
                             <option selected disabled>Choose country</option>
                             <option value="LU">Luxembourg</option>
                             <option value="BJ">Benin</option>
@@ -213,7 +242,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="organizationWebsite" class="form-label">Organization Website</label>
-                        <input type="url" class="form-control" id="organizationWebsite" placeholder="Enter organization website URL">
+                        <input type="url" class="form-control" name="organizationWebsite" id="organizationWebsite" placeholder="Enter organization website URL">
                     </div>
                 </div>
             </aside>
@@ -222,40 +251,54 @@
                 <div class="col-md-12">
                     <!-- Research Project -->
                     <h5 class="input-group-title">Research Project Description</h5>
+                    <p class="alert alert-info">Describe your research project by providing a title, along with a concise overview that outlines the context and motivation behind your work. Additionally, please include any relevant details regarding the confidentiality of your project.                    </p>
                 </div>
 
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="projectTitle" class="form-label">Project Title</label>
-                        <input type="text" class="form-control" id="projectTitle" placeholder="Enter project title">
+                        <input type="text" name="projectTitle" class="form-control" id="projectTitle" required placeholder="Enter project title">
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <!-- Background and Motivation -->
                     <div class="mb-3">
-                        <label for="backgroundMotivation" class="form-label">Background and Motivation</label>
-                        <textarea class="form-control" id="backgroundMotivation" rows="4" placeholder="Describe background and motivation"></textarea>
+                        <label for="projectBackgroundMotivation" class="form-label">Background and Motivation</label>
+                        <textarea class="form-control" name="projectBackgroundMotivation" id="projectBackgroundMotivation" rows="4" placeholder="Describe background and motivation" required="required"></textarea>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="projectConfidentiality">Do you wish for your submission to be kept confidential?</label>
+                        <select name="projectConfidentiality" id="projectConfidentiality" required class="form-control">
+                            <option value="">Please choose an option</option>
+                            <option value="yes">Yes, I want my submission to be confidential</option>
+                            <option value="no">No, I do not require confidentiality</option>
+                        </select>
+                    </div>
+                </div>
+
             </aside>
             
             <aside id="researchProjectObjectives" class="row">
                 <div class="col-md-12">
                     <!-- Research Project Objectives -->
                     <h5 class="input-group-title">Research Project Objectives</h5>
+                    <p class="alert alert-info">Please provide the objectives of your research</p>
                 </div>
 
                 <div id="objectivesSection" class="col-md-12">
                     <!-- Research Objectives -->
                     <label for="objective" class="form-label">Objectives</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Objective">
-                        <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
+                        <input type="text" class="form-control" required placeholder="Objective">
+                        <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-secondary mb-3" onclick="addObjective()">Add Objective</button>
+                    <button type="button" class="btn btn-secondary mb-3" id="addObjectiveBtn">Add Objective</button>
                 </div>
             </aside>
 
@@ -263,18 +306,19 @@
                 <div class="col-md-12">
                     <!-- Research Questions -->
                     <h5 class="input-group-title">Research Questions</h5>
+                    <p class="alert alert-info">Please provide the research question for your project</p>
                 </div>
 
                 <div id="questionsSection" class="col-md-12">
                     <!-- Research Questions -->
                     <label for="question" class="form-label">Questions</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Research Question">
-                        <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
+                        <input type="text" class="form-control" required placeholder="Research Question">
+                        <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-secondary mb-3" onclick="addQuestion()">Add Research Question</button>
+                    <button type="button" class="btn btn-secondary mb-3" id="addResearchQuestionBtn">Add Research Question</button>
                 </div>
             </aside>
             
@@ -282,20 +326,21 @@
                 <div class="col-md-12">
                     <!-- Research Project Methodology -->
                     <h5 class="input-group-title">Research Project Methodology</h5>
+                    <p class="alert alert-info">Please detail the technical investigation to be conducted, ethical considerations involved, and the approach for assessing the effectiveness and accuracy of your findings.</p>
                 </div>
     
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="technicalInvestigation" class="form-label">Technical Investigation</label>
-                        <textarea class="form-control" id="technicalInvestigation" rows="3" placeholder="Describe technical investigation methodology"></textarea>
+                        <textarea class="form-control" id="technicalInvestigation" name="technicalInvestigation" rows="3" placeholder="Describe technical investigation methodology"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="evaluationAndValidation" class="form-label">Evaluation and Validation</label>
-                        <textarea class="form-control" id="evaluationAndValidation" rows="3" placeholder="Describe the methods for to assessing the effectiveness and accuracy of the findings"></textarea>
+                        <textarea class="form-control" id="evaluationAndValidation" name="evaluationAndValidation" rows="3" placeholder="Describe the methods for to assessing the effectiveness and accuracy of the findings"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="ethicalConsiderations" class="form-label">Ethical Considerations</label>
-                        <textarea class="form-control" id="ethicalConsiderations" rows="3" placeholder="Describe ethical considerations for the project"></textarea>
+                        <textarea class="form-control" id="ethicalConsiderations" name="ethicalConsiderations" rows="3" placeholder="Describe ethical considerations for the project"></textarea>
                     </div>
                 </div>
             </aside>
@@ -304,34 +349,66 @@
                 <div class="col-md-12">
                     <!-- Research Project Impact -->
                     <h5 class="input-group-title">Research Project Impact</h5>
+                    <p class="alert alert-info">Here, you should describe the impact of your research project.</p>
                 </div>
     
                 <div class="col-md-12">
                     <!-- Expected Contributions -->
                     <div class="mb-3">
                         <label for="expectedContributions" class="form-label">Expected Contributions</label>
-                        <textarea class="form-control" id="expectedContributions" rows="4" placeholder="List expected contributions"></textarea>
+                        <textarea class="form-control" id="expectedContributions" name="expectedContributions" required rows="4" placeholder="List expected contributions"></textarea>
                     </div>
                 </div>
             </aside>
             
-            <aside id="researchProjectReferences" class="row">
+            <aside id="additionalInformation" class="row">
                 <div class="col-md-12">
-                    <!-- References -->
-                    <h5 class="input-group-title">References</h5>
+                    <h5 class="input-group-title">Additional Information</h5>
+                    <p class="alert alert-info">Here, you can provide references including related work to your research project, upload any related attachments, and submit the CVs of potential candidates who are suitable for the project.</p>
                 </div>
     
                 <div class="col-md-12">
                     <div class="mb-3">
-                        <textarea class="form-control" id="references" rows="3" placeholder="List references"></textarea>
+                        <label for="references" class="form-label">References</label>
+                        <textarea class="form-control" id="references" name="references" rows="3" placeholder="List references, related work..."></textarea>
                     </div>
                 </div>
+
+                <div id="projectDucumentUpload" class="col-md-12">
+                    <label for="projectDucumentUpload" class="form-label">Full Project Document</label>
+                    <div class="input-group mb-3">
+                        <input type="file" name="projectDucumentUpload" class="form-control" accept=".pdf">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="iHaveCandidates" name="iHaveCandidates">
+                        <label class="form-check-label" for="iHaveCandidates">
+                            I already have potential candidates to contribute on this project.
+                        </label>
+                    </div>
+                </div>
+
+                <div id="studentCVUploadSection" class="col-md-12 studentCVsUploadItems">
+                    <label for="studentCVUploadSection" class="form-label">Upload Potential Students CVs</label>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" accept=".pdf">
+                        <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                    </div>
+                </div>
+                <div class="col-md-12 studentCVsUploadItems">
+                    <button type="button" class="btn btn-secondary mb-3" id="addCVBtn">Add CV</button>
+                </div>
+
             </aside>
 
-            <aside id="agreement" class="row"></aside>
+            <aside id="agreement" class="row">
+
                 <div class="col-md-12">
+                    <p class="alert alert-info">Double check the infofmation you provided, review our <a href="#">terms and conditions</a> and finalize your submission using the button below.</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="agreementCheck" required>
+                        <input class="form-check-input" type="checkbox" id="agreementCheck" name="agreementCheck" required>
                         <label class="form-check-label" for="agreementCheck">
                             I agree to the <a href="#">terms and conditions</a>.
                         </label>
@@ -343,7 +420,7 @@
                 <div class="col-md-12">
                     <!-- Submit Button -->
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit Proposal</button>
+                        <button type="submit" class="btn btn-primary">Submit Your Research Project Proposal</button>
                     </div>
                 </div>
             </aside>
@@ -504,34 +581,84 @@
   <script src="js/additional.js"></script>
 
     <script>
-        // Function to add a new objective input
-        function addObjective() {
-            const objectivesSection = document.getElementById("objectivesSection");
-            const newInputGroup = document.createElement("div");
-            newInputGroup.className = "input-group mb-3";
-            newInputGroup.innerHTML = `
-                <input type="text" class="form-control" placeholder="Objective">
-                <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-            `;
-            objectivesSection.appendChild(newInputGroup);
-        }
+        $(document).ready(function() {
 
-        // Function to add a new research question input
-        function addQuestion() {
-            const questionsSection = document.getElementById("questionsSection");
-            const newInputGroup = document.createElement("div");
-            newInputGroup.className = "input-group mb-3";
-            newInputGroup.innerHTML = `
-                <input type="text" class="form-control" placeholder="Research Question">
-                <button class="btn btn-outline-secondary" type="button" onclick="removeInput(this)">Remove</button>
-            `;
-            questionsSection.appendChild(newInputGroup);
-        }
+            // Required inputs
+            $('.submission-form-space input, .submission-form-space select, .submission-form-space textarea').each(function(index) {
+                if ($(this).attr('required')) {
+                    try {
+                        let label = $(this).parent().find('label');
+                        if (label != undefined) {
+                            label.html(label.text() + '<strong class="text-danger"> *</strong>');
+                        }
+                    } catch (error) {
+                        
+                    }
+                    
+                } else {
 
-        // Function to remove an input group
-        function removeInput(button) {
-            button.parentElement.remove();
-        }
+                }
+            });
+            
+            // Function to remove an input group
+            var enableInputRemoval = function() {
+                $('.removeInputBtn').on('click', function(e) {
+                    $(this).parent().remove();
+                });
+            };
+            enableInputRemoval();
+
+            // Add a new objective input
+            $('#addObjectiveBtn').on('click', function() {
+                const objectivesSection = document.getElementById("objectivesSection");
+                const newInputGroup = document.createElement("div");
+                newInputGroup.className = "input-group mb-3";
+                newInputGroup.innerHTML = `
+                    <input type="text" class="form-control" placeholder="Objective">
+                    <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                `;
+                objectivesSection.appendChild(newInputGroup);
+                enableInputRemoval();
+            });
+
+            // Add a new research question input
+            $('#addResearchQuestionBtn').on('click', function() {
+                const questionsSection = document.getElementById("questionsSection");
+                const newInputGroup = document.createElement("div");
+                newInputGroup.className = "input-group mb-3";
+                newInputGroup.innerHTML = `
+                    <input type="text" class="form-control" placeholder="Research Question">
+                    <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                `;
+                questionsSection.appendChild(newInputGroup);
+                enableInputRemoval();
+            });
+
+            // Add a new PDF upload input
+            $('#addCVBtn').on('click', function() {
+                const pdfUploadsSection = document.getElementById('studentCVUploadSection');
+                const newInputGroup = document.createElement("div");
+                newInputGroup.className = "input-group mb-3";
+                newInputGroup.innerHTML = `
+                    <input type="file" class="form-control" accept=".pdf">
+                    <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                `;
+                pdfUploadsSection.appendChild(newInputGroup);
+                enableInputRemoval();
+            });
+
+            // Hide/Show CVs upload sections
+            $('#iHaveCandidates').on('change', function(e) {
+                if ($(this).is(':checked')) {
+                    $('.studentCVsUploadItems').show();
+                } else {
+                    $('.studentCVsUploadItems').hide();
+                }
+            });
+
+
+        });
+        
     </script>
 </body>
 </html>
