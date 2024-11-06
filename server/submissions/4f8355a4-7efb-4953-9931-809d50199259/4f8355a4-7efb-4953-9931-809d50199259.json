@@ -1,0 +1,43 @@
+{
+    "ipAddress": "127.0.0.1",
+    "submissionDate": "06/11/2024 12:26:27",
+    "firstName": "Lucian",
+    "lastName": "Meyers",
+    "gender": "non-binary",
+    "title": "mrs",
+    "submitterEmail": "gewe@mailinator.com",
+    "submitterPhone": "+1 (546) 603-8758",
+    "biography": "Quasi quo est dolor",
+    "organizationType": "Governmental",
+    "organizationName": "Goodman and Koch LLC",
+    "researchUnitName": "Ora David",
+    "streetAndNumber": "80",
+    "city": "Dolorem sed qui et s",
+    "zipCode": "52234",
+    "country": "SN",
+    "organizationWebsite": "https://www.huporatatixozaf.ws",
+    "projectTitle": "Cupiditate doloremqu",
+    "projectBackgroundMotivation": "Repellendus Volupta",
+    "projectConfidentiality": "yes",
+    "researchObjective[]": [
+        "Molestiae nihil nisi",
+        "Second objective"
+    ],
+    "researchQuestion[]": [
+        "Culpa ullam tempor ",
+        "Hello world"
+    ],
+    "technicalInvestigation": "Facere nesciunt ill",
+    "evaluationAndValidation": "Quidem at autem quia",
+    "ethicalConsiderations": "Voluptatem fuga Sit",
+    "expectedContributions": "Modi do dignissimos ",
+    "iHavePartners": "on",
+    "partnerName[]": [
+        "Part 1",
+        "P2"
+    ],
+    "projectDucumentUpload": "",
+    "iHaveCandidates": "on",
+    "references": "Qui ea labore vitae ",
+    "agreementCheck": "on"
+}
