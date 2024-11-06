@@ -1553,7 +1553,7 @@ h6 {
   box-shadow: 0px 0px 1px gray;
 }
 
-.studentCVsUploadItems {
+.studentCVsUploadItems, .partnerItems {
   display: none;
 }
 

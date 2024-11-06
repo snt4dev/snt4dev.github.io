@@ -364,14 +364,28 @@
             <aside id="additionalInformation" class="row">
                 <div class="col-md-12">
                     <h5 class="input-group-title">Additional Information</h5>
-                    <p class="alert alert-info">Here, you can provide references including related work to your research project, upload any related attachments, and submit the CVs of potential candidates who are suitable for the project.</p>
+                    <p class="alert alert-info">Here, you can provide references including related work to your research project, upload any related attachments, and submit a list of your potential partner as well as the CVs of potential candidates who are suitable for the project.</p>
                 </div>
     
                 <div class="col-md-12">
-                    <div class="mb-3">
-                        <label for="references" class="form-label">References</label>
-                        <textarea class="form-control" id="references" name="references" rows="3" placeholder="List references, related work..."></textarea>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="iHavePartners" name="iHavePartners">
+                        <label class="form-check-label" for="iHavePartners">
+                            I have already identified potential partners to contribute to this project.
+                        </label>
                     </div>
+                </div>
+
+                <div id="partnerSection" class="col-md-12 partnerItems">
+                    <!-- Research Questions -->
+                    <label for="partner" class="form-label">Partner Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" required placeholder="">
+                        <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                    </div>
+                </div>
+                <div class="col-md-12 partnerItems">
+                    <button type="button" class="btn btn-secondary mb-3" id="addPartnerBtn">Add Partner</button>
                 </div>
 
                 <div id="projectDucumentUpload" class="col-md-12">
@@ -399,6 +413,13 @@
                 </div>
                 <div class="col-md-12 studentCVsUploadItems">
                     <button type="button" class="btn btn-secondary mb-3" id="addCVBtn">Add CV</button>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mb-3">
+                        <label for="references" class="form-label">References</label>
+                        <textarea class="form-control" id="references" name="references" rows="3" placeholder="List references, related work..."></textarea>
+                    </div>
                 </div>
 
             </aside>
@@ -629,6 +650,19 @@
                 enableInputRemoval();
             });
 
+            // Add a new research question input
+            $('#addPartnerBtn').on('click', function() {
+                const questionsSection = document.getElementById("partnerSection");
+                const newInputGroup = document.createElement("div");
+                newInputGroup.className = "input-group mb-3";
+                newInputGroup.innerHTML = `
+                    <input type="text" class="form-control" placeholder="">
+                    <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
+                `;
+                questionsSection.appendChild(newInputGroup);
+                enableInputRemoval();
+            });
+
             // Add a new PDF upload input
             $('#addCVBtn').on('click', function() {
                 const pdfUploadsSection = document.getElementById('studentCVUploadSection');
@@ -648,6 +682,15 @@
                     $('.studentCVsUploadItems').show();
                 } else {
                     $('.studentCVsUploadItems').hide();
+                }
+            });
+
+            // Hide/Show Partners sections
+            $('#iHavePartners').on('change', function(e) {
+                if ($(this).is(':checked')) {
+                    $('.partnerItems').show();
+                } else {
+                    $('.partnerItems').hide();
                 }
             });
 
