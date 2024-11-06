@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
+from django.conf import settings
 from datetime import datetime
 
 import os
@@ -59,11 +60,13 @@ class SubmissionView(TemplateView):
         json_data = json.dumps(query_dict_flattened, indent=4)
         json_bytes = json_data.encode('utf-8')
         json_file = io.BytesIO(json_bytes)
-        fs = FileSystemStorage(location=f'submissions/{submission_id}')
+        location = settings.BASE_DIR / f'submissions/{submission_id}'
+        fs = FileSystemStorage(location=location)
         fs.save(f'{submission_id}.json', json_file)
         
     def upload(self, submission_id, file):
-        fs = FileSystemStorage(location=f'submissions/{submission_id}') 
+        location = settings.BASE_DIR / f'submissions/{submission_id}'
+        fs = FileSystemStorage(location=location) 
         fs.save(f'{submission_id}_{file.name}', file)
     
     def post(self, request, *args, **kwargs):
