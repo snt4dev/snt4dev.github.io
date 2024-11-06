@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-07bc-560#@s0o2mih843ehwj%2j^2_d6b%s3b@fh!+&$7-h6!0
 DEBUG = True
 
 ALLOWED_HOSTS = ['nih4me.dev']
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8002']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1', 'https://snt4dev.github.io']
 
 
 # Application definition
