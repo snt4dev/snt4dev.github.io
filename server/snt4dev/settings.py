@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-07bc-560#@s0o2mih843ehwj%2j^2_d6b%s3b@fh!+&$7-h6!0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nih4me.dev']
 CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8002']
 
 

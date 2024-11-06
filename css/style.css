@@ -1557,6 +1557,15 @@ h6 {
   display: none;
 }
 
+#thank-you {
+  height: 500px;
+  padding-top: 180px;
+}
+
+#thank-you img {
+  width: 80px;
+}
+
 
 /*--------------------------------------------------------------
 # Responsive Media Queries

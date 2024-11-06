@@ -82,50 +82,63 @@
   <section id="student-application-submission" class="after-header clearfix">
     <div class="container my-5">
         <div class="row justify-content-md-center">
-            <h1 class="text-center mb-1 col-md-12">Application Form for Doctoral Candidate<br>and Post-Doctoral</h1>
+            <h3 class="text-center mb-1 col-md-12">Application Form for Doctoral Candidate<br>and Post-Doctoral</h3>
             <p class="text-center col-md-8">
                 Please complete the form below to apply.
             </p>
         </div>
         
-        <form class="form submission-form-space">
+        <form class="form submission-form-space" action="http://127.0.0.1:8000/submission/" method="POST" enctype="multipart/form-data">
+
+            <input type="hidden" name="submissionType" value="Research Project Proposal Submission">
             <aside id="personalInformation" class="row">
                 <div class="col-md-12">
-                    <h5 class="input-group-title">Personal Information</h5>
+                    <h5 class="input-group-title">Application Type & Personal Information</h5>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="mb-3">
+                      <label for="applicationType">Select your application type:</label>
+                      <select name="applicationType" id="applicationType" required class="form-control">
+                          <option value="">Please choose an option</option>
+                          <option value="doctoral">Doctoral Candidate</option>
+                          <option value="postdoctoral">Postdoctoral Researcher</option>
+                      </select>
+                  </div>
                 </div>
                 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                        <input type="text" class="form-control" id="firstName" name="firstName" required placeholder="Enter your first name">
                     </div>
                 </div>
     
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                        <input type="text" class="form-control" id="lastName" name="lastName" required placeholder="Enter your last name">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="dob" class="form-label">Date of Birth</label>
-                        <input type="date" class="form-control" id="dob">
+                        <input type="date" class="form-control" name="dob" required id="dob">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="nationality" class="form-label">Nationality</label>
-                        <input type="text" class="form-control" id="nationality" placeholder="Enter your nationality">
+                        <input type="text" class="form-control" id="nationality" name="nationality" required placeholder="Enter your nationality">
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="englishLevel" class="form-label">English Level</label>
-                        <select class="form-control" id="englishLevel">
+                        <select class="form-control" id="englishLevel" name="englishLevel" required>
                             <option selected disabled>Choose your level...</option>
                             <option value="beginner">Beginner</option>
                             <option value="intermediate">Intermediate</option>
@@ -145,7 +158,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label for="accommodation" class="form-label">Do you need accommodation assistance?</label>
-                        <select class="form-control" id="accommodation">
+                        <select class="form-control" id="accommodation" name="accommodation" required>
                             <option selected disabled>Choose...</option>
                             <option value="yes">Yes</option>
                             <option value="no">No</option>
@@ -157,37 +170,26 @@
             <aside id="researchInformation" class="row">
                 <div class="col-md-12">
                     <h5 class="input-group-title">Research Information</h5>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="mb-3">
-                      <label for="applicationType">Select your application type:</label>
-                      <select name="applicationType" id="applicationType" required class="form-control">
-                          <option value="">Please choose an option</option>
-                          <option value="doctoral">Doctoral Candidate</option>
-                          <option value="postdoctoral">Postdoctoral Researcher</option>
-                      </select>
-                  </div>
-                </div>              
+                </div>           
 
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="motivation" class="form-label">Motivation for Studying/Conducting Research in Luxembourg</label>
-                        <textarea class="form-control" id="motivation" rows="4" placeholder="Describe your motivation"></textarea>
+                        <textarea class="form-control" id="motivation" name="motivation" required rows="4" placeholder="Describe your motivation"></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="fieldInterest" class="form-label">Field of Interest and Scientific Motivation</label>
-                        <textarea class="form-control" id="fieldInterest" rows="4" placeholder="Describe your scientific domain"></textarea>
+                        <textarea class="form-control" id="fieldInterest" name="fieldInterest" required rows="4" placeholder="Describe your scientific domain"></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="researchGroup" class="form-label">Research Group Selection</label>
-                        <select class="form-control" id="researchGroup" multiple>
+                        <select class="form-control" id="researchGroup" name="researchGroup" required multiple>
                             <option disabled>Select up to 3 research groups...</option>
                             <option value="apsia">Applied Security and Information Assurance (APSIA)</option>
                             <option value="arg">Automation and Robotics (ARG)</option>
@@ -215,14 +217,14 @@
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="researchProposal" class="form-label">Brief Research Proposal</label>
-                        <textarea class="form-control" id="researchProposal" rows="4" placeholder="Provide a brief research proposal sketch"></textarea>
+                        <textarea class="form-control" id="researchProposal" name="researchProposal" required rows="4" placeholder="Provide a brief research proposal sketch"></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-12">
                     <div class="mb-3">
                         <label for="hostGroupJustification" class="form-label">SnT Host Research Group Justification</label>
-                        <textarea class="form-control" id="hostGroupJustification" rows="4" placeholder="Specify your motivation and the reason for selecting this/these research group(s)"></textarea>
+                        <textarea class="form-control" id="hostGroupJustification" name="hostGroupJustification" required rows="4" placeholder="Specify your motivation and the reason for selecting this/these research group(s)"></textarea>
                     </div>
                 </div>
             </aside>
@@ -230,7 +232,7 @@
             <aside id="agreement" class="row">
                 <div class="col-md-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="agreementCheck" required>
+                        <input class="form-check-input" type="checkbox" id="agreementCheck" name="agreementCheck" required>
                         <label class="form-check-label" for="agreementCheck">
                           I agree to the <a href="#">terms and conditions</a>.
                         </label>
@@ -350,10 +352,7 @@
                 <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
               </form>
             </div>
-
           </div>
-
-          
 
         </div>
 

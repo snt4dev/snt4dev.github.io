@@ -89,8 +89,9 @@
         </div>
         
         
-        <form class="form submission-form-space">
+        <form class="form submission-form-space" action="http://127.0.0.1:8000/submission/" method="POST" enctype="multipart/form-data">
 
+            <input type="hidden" name="submissionType" value="Research Project Proposal Submission">
             <aside id="personalInformation" class="row">
                 <div class="col-md-12">
                     <!-- Personal -->
@@ -293,7 +294,7 @@
                     <!-- Research Objectives -->
                     <label for="objective" class="form-label">Objectives</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" required placeholder="Objective">
+                        <input type="text" class="form-control" name="researchObjective[]" required placeholder="Objective">
                         <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
@@ -313,7 +314,7 @@
                     <!-- Research Questions -->
                     <label for="question" class="form-label">Questions</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" required placeholder="Research Question">
+                        <input type="text" class="form-control" required name="researchQuestion[]" placeholder="Research Question">
                         <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
@@ -380,7 +381,7 @@
                     <!-- Research Questions -->
                     <label for="partner" class="form-label">Partner Name</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" required placeholder="">
+                        <input type="text" class="form-control" name="partnerName[]" placeholder="">
                         <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
@@ -407,7 +408,7 @@
                 <div id="studentCVUploadSection" class="col-md-12 studentCVsUploadItems">
                     <label for="studentCVUploadSection" class="form-label">Upload Potential Students CVs</label>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" accept=".pdf">
+                        <input type="file" class="form-control" name="studentCV[]" accept=".pdf">
                         <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                     </div>
                 </div>
@@ -630,7 +631,7 @@
                 const newInputGroup = document.createElement("div");
                 newInputGroup.className = "input-group mb-3";
                 newInputGroup.innerHTML = `
-                    <input type="text" class="form-control" placeholder="Objective">
+                    <input type="text" class="form-control" name="researchObjective[]" placeholder="Objective">
                     <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                 `;
                 objectivesSection.appendChild(newInputGroup);
@@ -643,7 +644,7 @@
                 const newInputGroup = document.createElement("div");
                 newInputGroup.className = "input-group mb-3";
                 newInputGroup.innerHTML = `
-                    <input type="text" class="form-control" placeholder="Research Question">
+                    <input type="text" class="form-control" name="researchQuestion[]" placeholder="Research Question">
                     <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                 `;
                 questionsSection.appendChild(newInputGroup);
@@ -656,7 +657,7 @@
                 const newInputGroup = document.createElement("div");
                 newInputGroup.className = "input-group mb-3";
                 newInputGroup.innerHTML = `
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" name="partnerName[]" placeholder="">
                     <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                 `;
                 questionsSection.appendChild(newInputGroup);
@@ -669,7 +670,7 @@
                 const newInputGroup = document.createElement("div");
                 newInputGroup.className = "input-group mb-3";
                 newInputGroup.innerHTML = `
-                    <input type="file" class="form-control" accept=".pdf">
+                    <input type="file" class="form-control" name="studentCV[]" accept=".pdf">
                     <button class="btn btn-outline-secondary removeInputBtn" type="button">Remove</button>
                 `;
                 pdfUploadsSection.appendChild(newInputGroup);
