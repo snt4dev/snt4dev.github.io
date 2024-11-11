@@ -76,5 +76,5 @@ class SubmissionView(TemplateView):
             files = request.FILES.getlist(key)
             for file in files:
                 self.upload(submission_id, file)
-        return redirect("http://127.0.0.1:8002/thank-you.html")
+        return redirect("https://snt4dev.github.io/thank-you.html")
 
